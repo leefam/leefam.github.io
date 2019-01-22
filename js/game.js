@@ -68,7 +68,7 @@ function draw() {
  //location.reload(); // Перезагрузка страницы
  //window.location.reload();
  window.location.href = window.location.href; //This is a possibility
-window.location.reload(); //Another possiblity
+window.location.reload(true); //Another possiblity
 history.go(0); //And another
  }
 
