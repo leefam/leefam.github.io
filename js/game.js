@@ -13,7 +13,7 @@ fg.src = "img/fg.png";
 pipeUp.src = "img/pipeUp.png";
 pipeBottom.src = "img/pipeBottom.png";
 
-// Çâóêîâûå ôàéëû
+
 var fly = new Audio();
 var score_audio = new Audio();
 
@@ -22,7 +22,7 @@ score_audio.src = "audio/score.mp3";
 
 var gap = 90;
 
-// Ïðè íàæàòèè íà êàêóþ-ëèáî êíîïêó
+
 document.addEventListener("keydown", moveUp);
 document.addEventListener("click", moveUp);
 
@@ -31,7 +31,7 @@ function moveUp() {
  fly.play();
 }
 
-// Ñîçäàíèå áëîêîâ
+
 var pipe = [];
 
 pipe[0] = {
@@ -40,7 +40,7 @@ pipe[0] = {
 }
 
 var score = 0;
-// Ïîçèöèÿ ïòè÷êè
+
 var xPos = 10;
 var yPos = 150;
 var grav = 1.5;
@@ -61,12 +61,11 @@ function draw() {
  });
  }
 
- // Îòñëåæèâàíèå ïðèêîñíîâåíèé
  if(xPos + bird.width >= pipe[i].x
  && xPos <= pipe[i].x + pipeUp.width
  && (yPos <= pipe[i].y + pipeUp.height
  || yPos + bird.height >= pipe[i].y + pipeUp.height + gap) || yPos + bird.height >= cvs.height - fg.height) {
- location.reload(); // Ïåðåçàãðóçêà ñòðàíèöû
+ location.reload(); 
  }
 
  if(pipe[i].x == 5) {
