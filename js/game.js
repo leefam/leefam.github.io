@@ -7,13 +7,13 @@ var fg = new Image();
 var pipeUp = new Image();
 var pipeBottom = new Image();
 
-bird.src = "img/admin.png";
+bird.src = "img/bird.png";
 bg.src = "img/bg.png";
 fg.src = "img/fg.png";
 pipeUp.src = "img/pipeUp.png";
 pipeBottom.src = "img/pipeBottom.png";
 
-// Звуковые файлы
+// Г‡ГўГіГЄГ®ГўГ»ГҐ ГґГ Г©Г«Г»
 var fly = new Audio();
 var score_audio = new Audio();
 
@@ -22,7 +22,7 @@ score_audio.src = "audio/score.mp3";
 
 var gap = 90;
 
-// При нажатии на какую-либо кнопку
+// ГЏГ°ГЁ Г­Г Г¦Г ГІГЁГЁ Г­Г  ГЄГ ГЄГіГѕ-Г«ГЁГЎГ® ГЄГ­Г®ГЇГЄГі
 document.addEventListener("keydown", moveUp);
 document.addEventListener("click", moveUp);
 
@@ -31,7 +31,7 @@ function moveUp() {
  fly.play();
 }
 
-// Создание блоков
+// Г‘Г®Г§Г¤Г Г­ГЁГҐ ГЎГ«Г®ГЄГ®Гў
 var pipe = [];
 
 pipe[0] = {
@@ -40,7 +40,7 @@ pipe[0] = {
 }
 
 var score = 0;
-// Позиция птички
+// ГЏГ®Г§ГЁГ¶ГЁГї ГЇГІГЁГ·ГЄГЁ
 var xPos = 10;
 var yPos = 150;
 var grav = 1.5;
@@ -61,12 +61,12 @@ function draw() {
  });
  }
 
- // Отслеживание прикосновений
+ // ГЋГІГ±Г«ГҐГ¦ГЁГўГ Г­ГЁГҐ ГЇГ°ГЁГЄГ®Г±Г­Г®ГўГҐГ­ГЁГ©
  if(xPos + bird.width >= pipe[i].x
  && xPos <= pipe[i].x + pipeUp.width
  && (yPos <= pipe[i].y + pipeUp.height
  || yPos + bird.height >= pipe[i].y + pipeUp.height + gap) || yPos + bird.height >= cvs.height - fg.height) {
- location.reload(); // Перезагрузка страницы
+ location.reload(); // ГЏГҐГ°ГҐГ§Г ГЈГ°ГіГ§ГЄГ  Г±ГІГ°Г Г­ГЁГ¶Г»
  }
 
  if(pipe[i].x == 5) {
