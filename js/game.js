@@ -67,9 +67,10 @@ function draw() {
  || yPos + bird.height >= pipe[i].y + pipeUp.height + gap) || yPos + bird.height >= cvs.height - fg.height) {
  //location.reload(); // Перезагрузка страницы
  //window.location.reload();
- window.location.href = window.location.href; //This is a possibility
-window.location.reload(true); //Another possiblity
-history.go(0); //And another
+//window.location.href = window.location.href; //This is a possibility
+//window.location.reload(true); //Another possiblity
+//history.go(0); //And another
+window.location = document.URL
  }
 
  if(pipe[i].x == 5) {
