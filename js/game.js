@@ -23,7 +23,6 @@ score_audio.src = "audio/score.mp3";
 var gap = 90;
 
 // При нажатии на какую-либо кнопку
-document.addEventListener("keydown", moveUp);
 document.addEventListener("click", moveUp);
 
 function moveUp() {
@@ -67,7 +66,10 @@ function draw() {
  && (yPos <= pipe[i].y + pipeUp.height
  || yPos + bird.height >= pipe[i].y + pipeUp.height + gap) || yPos + bird.height >= cvs.height - fg.height) {
  //location.reload(); // Перезагрузка страницы
-  window.location.reload();
+ //window.location.reload();
+ window.location.href = window.location.href; //This is a possibility
+window.location.reload(); //Another possiblity
+history.go(0); //And another
  }
 
  if(pipe[i].x == 5) {
