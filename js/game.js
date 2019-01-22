@@ -8,12 +8,12 @@ var pipeUp = new Image();
 var pipeBottom = new Image();
 
 bird.src = "img/admin.png";
-bg.src = "img/bg.png";
-fg.src = "img/fg.png";
+bg.src = "img/bg1.png";
+fg.src = "img/fg1.png";
 pipeUp.src = "img/pipeUp.png";
 pipeBottom.src = "img/pipeBottom.png";
 
-// Р—РІСѓРєРѕРІС‹Рµ С„Р°Р№Р»С‹
+// Звуковые файлы
 var fly = new Audio();
 var score_audio = new Audio();
 
@@ -22,7 +22,7 @@ score_audio.src = "audio/score.mp3";
 
 var gap = 90;
 
-// РџСЂРё РЅР°Р¶Р°С‚РёРё РЅР° РєР°РєСѓСЋ-Р»РёР±Рѕ РєРЅРѕРїРєСѓ
+// При нажатии на какую-либо кнопку
 document.addEventListener("click", moveUp);
 
 function moveUp() {
@@ -30,7 +30,7 @@ function moveUp() {
  fly.play();
 }
 
-// РЎРѕР·РґР°РЅРёРµ Р±Р»РѕРєРѕРІ
+// Создание блоков
 var pipe = [];
 
 pipe[0] = {
@@ -39,7 +39,7 @@ pipe[0] = {
 }
 
 var score = 0;
-// РџРѕР·РёС†РёСЏ РїС‚РёС‡РєРё
+// Позиция птички
 var xPos = 10;
 var yPos = 150;
 var grav = 1.5;
@@ -60,12 +60,12 @@ function draw() {
  });
  }
 
- // РћС‚СЃР»РµР¶РёРІР°РЅРёРµ РїСЂРёРєРѕСЃРЅРѕРІРµРЅРёР№
+ // Отслеживание прикосновений
  if(xPos + bird.width >= pipe[i].x
  && xPos <= pipe[i].x + pipeUp.width
  && (yPos <= pipe[i].y + pipeUp.height
  || yPos + bird.height >= pipe[i].y + pipeUp.height + gap) || yPos + bird.height >= cvs.height - fg.height) {
- //location.reload(); // РџРµСЂРµР·Р°РіСЂСѓР·РєР° СЃС‚СЂР°РЅРёС†С‹
+ //location.reload(); // Перезагрузка страницы
  //window.location.reload();
 //window.location.href = window.location.href; //This is a possibility
 //window.location.reload(true); //Another possiblity
