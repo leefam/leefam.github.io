@@ -7,11 +7,11 @@ var fg = new Image();
 var pipeUp = new Image();
 var pipeBottom = new Image();
 
-bird.src = "img/admin.png";
+bird.src = "img/admin1.png";
 bg.src = "img/bg1.png";
 fg.src = "img/fg1.png";
-pipeUp.src = "img/pipeUp.png";
-pipeBottom.src = "img/pipeBottom.png";
+pipeUp.src = "img/2.png";
+pipeBottom.src = "img/1.png";
 
 // Звуковые файлы
 var fly = new Audio();
@@ -20,13 +20,13 @@ var score_audio = new Audio();
 fly.src = "audio/fly.mp3";
 score_audio.src = "audio/score.mp3";
 
-var gap = 90;
+var gap = 200;
 
-// При нажатии на какую-либо кнопку
+// При нажатии на экран
 document.addEventListener("click", moveUp);
 
 function moveUp() {
- yPos -= 25;
+ yPos -= 45; //высота полета при нажатии на экран
  fly.play();
 }
 
@@ -42,7 +42,7 @@ var score = 0;
 // Позиция птички
 var xPos = 10;
 var yPos = 150;
-var grav = 1.5;
+var grav = 1.7;
 
 function draw() {
  ctx.drawImage(bg, 0, 0);
